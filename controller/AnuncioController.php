@@ -2,36 +2,39 @@
 
 include_once __DIR__ . "/../config/conexion.php";
 
-/* REGISTRAR CARRERA */
+/* REGISTRAR ANUNCIO */
 
 if(isset($_POST['registrar'])){
 
-    $nombre = $_POST['nombre'];
+    $titulo = $_POST['titulo'];
     $descripcion = $_POST['descripcion'];
-    $duracion = $_POST['duracion'];
+    $docente = $_POST['docente'];
+    $fecha = $_POST['fecha'];
     $estado = $_POST['estado'];
 
-    $sql = "INSERT INTO carreras(
+    $sql = "INSERT INTO anuncios(
 
-                nombre,
+                titulo,
                 descripcion,
-                duracion,
+                docente,
+                fecha,
                 estado
 
             )
 
             VALUES(
 
-                '$nombre',
+                '$titulo',
                 '$descripcion',
-                '$duracion',
+                '$docente',
+                '$fecha',
                 '$estado'
 
             )";
 
     mysqli_query($conexion, $sql);
 
-    header("Location: ../views/carreras/listar.php");
+    header("Location: ../views/anuncios/listar.php");
 
 }
 ?>

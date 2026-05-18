@@ -1,0 +1,1 @@
+console.log("Modulo mensajes cargado correctamente");
