@@ -1,1 +1,3 @@
-<?php include 'views/home.php'; ?>
+<?php
+header("Location: views/home.php");
+exit;

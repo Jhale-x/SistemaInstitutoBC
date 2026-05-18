@@ -1,0 +1,1 @@
+console.log("Login Instituto BC 2026 cargado correctamente");

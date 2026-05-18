@@ -1,0 +1,1 @@
+console.log("Home Instituto BC 2026 cargado correctamente");
