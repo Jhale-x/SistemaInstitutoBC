@@ -1,0 +1,43 @@
+body{
+
+    background:#0f172a;
+
+    color:white;
+
+    font-family:Arial;
+}
+
+.topbar{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:30px;
+}
+
+.table-container{
+
+    background:#1e293b;
+
+    padding:30px;
+
+    border-radius:20px;
+}
+
+.custom-table{
+
+    color:white;
+}
+
+.custom-table thead{
+
+    color:#94a3b8;
+}
+
+.custom-table tr{
+
+    border-color:#334155;
+}
