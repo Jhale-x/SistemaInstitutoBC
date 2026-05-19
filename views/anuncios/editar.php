@@ -58,20 +58,25 @@ if (isset($_POST['actualizar'])) {
             Editar Anuncio
         </h1>
 
-        <form method="POST">
+        <form action="../../controller/AnuncioController.php" method="POST">
+
+            <input type="hidden" name="id_anuncio" value="<?php echo $fila['id_anuncio']; ?>">
 
             <input type="text"
                 name="titulo"
                 value="<?php echo $fila['titulo']; ?>"
-                class="form-control mb-3">
+                class="form-control mb-3"
+                placeholder="Título">
 
             <textarea name="descripcion"
-                class="form-control mb-3"><?php echo $fila['descripcion']; ?></textarea>
+                class="form-control mb-3"
+                placeholder="Descripción"><?php echo $fila['descripcion']; ?></textarea>
 
             <input type="text"
                 name="docente"
                 value="<?php echo $fila['docente']; ?>"
-                class="form-control mb-3">
+                class="form-control mb-3"
+                placeholder="Docente">
 
             <input type="date"
                 name="fecha"
@@ -81,18 +86,18 @@ if (isset($_POST['actualizar'])) {
             <select name="estado"
                 class="form-control mb-3">
 
-                <option value="Publicado">
+                <option value="Publicado" <?php echo ($fila['estado'] === 'Publicado') ? 'selected' : ''; ?>>
                     Publicado
                 </option>
 
-                <option value="Borrador">
+                <option value="Borrador" <?php echo ($fila['estado'] === 'Borrador') ? 'selected' : ''; ?>>
                     Borrador
                 </option>
 
             </select>
 
             <button type="submit"
-                name="actualizar"
+                name="editar"
                 class="btn btn-warning">
 
                 Actualizar

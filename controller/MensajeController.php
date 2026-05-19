@@ -41,3 +41,27 @@ if (isset($_POST['enviar'])) {
 
     header("Location: ../views/mensajes/listar.php");
 }
+
+if (isset($_POST['editar'])) {
+
+    $id = intval($_POST['id_mensaje']);
+    $emisor = mysqli_real_escape_string($conexion, $_POST['emisor']);
+    $receptor = mysqli_real_escape_string($conexion, $_POST['receptor']);
+    $asunto = mysqli_real_escape_string($conexion, $_POST['asunto']);
+    $mensaje = mysqli_real_escape_string($conexion, $_POST['mensaje']);
+    $estado = mysqli_real_escape_string($conexion, $_POST['estado'] ?? 'Enviado');
+
+    $update = "UPDATE mensajes SET emisor='$emisor', receptor='$receptor', asunto='$asunto', mensaje='$mensaje', estado='$estado' WHERE id_mensaje=$id";
+    mysqli_query($conexion, $update);
+
+    header("Location: ../views/mensajes/listar.php");
+    exit;
+}
+
+if (isset($_POST['eliminar'])) {
+    $id = intval($_POST['id_mensaje']);
+    $sql = "DELETE FROM mensajes WHERE id_mensaje=$id";
+    mysqli_query($conexion, $sql);
+    header("Location: ../views/mensajes/listar.php");
+    exit;
+}

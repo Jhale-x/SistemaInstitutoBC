@@ -60,27 +60,33 @@ if (isset($_POST['actualizar'])) {
             Editar Matrícula
         </h1>
 
-        <form method="POST">
+        <form action="../../controller/MatriculaController.php" method="POST">
+
+            <input type="hidden" name="id_matricula" value="<?php echo $fila['id_matricula']; ?>">
 
             <input type="text"
                 name="alumno"
                 value="<?php echo $fila['alumno']; ?>"
-                class="form-control mb-3">
+                class="form-control mb-3"
+                placeholder="Alumno">
 
             <input type="text"
                 name="carrera"
                 value="<?php echo $fila['carrera']; ?>"
-                class="form-control mb-3">
+                class="form-control mb-3"
+                placeholder="Carrera">
 
             <input type="text"
                 name="curso"
                 value="<?php echo $fila['curso']; ?>"
-                class="form-control mb-3">
+                class="form-control mb-3"
+                placeholder="Curso">
 
             <input type="text"
                 name="ciclo"
                 value="<?php echo $fila['ciclo']; ?>"
-                class="form-control mb-3">
+                class="form-control mb-3"
+                placeholder="Ciclo">
 
             <input type="date"
                 name="fecha"
@@ -90,18 +96,18 @@ if (isset($_POST['actualizar'])) {
             <select name="estado"
                 class="form-control mb-3">
 
-                <option value="Activo">
+                <option value="Activo" <?php echo ($fila['estado'] === 'Activo') ? 'selected' : ''; ?>>
                     Activo
                 </option>
 
-                <option value="Retirado">
+                <option value="Retirado" <?php echo ($fila['estado'] === 'Retirado') ? 'selected' : ''; ?>>
                     Retirado
                 </option>
 
             </select>
 
             <button type="submit"
-                name="actualizar"
+                name="editar"
                 class="btn btn-warning">
 
                 Actualizar

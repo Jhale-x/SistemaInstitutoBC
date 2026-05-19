@@ -58,17 +58,21 @@ if (isset($_POST['actualizar'])) {
             Editar Asistencia
         </h1>
 
-        <form method="POST">
+        <form action="../../controller/AsistenciaController.php" method="POST">
+
+            <input type="hidden" name="id_asistencia" value="<?php echo $fila['id_asistencia']; ?>">
 
             <input type="text"
                 name="alumno"
                 value="<?php echo $fila['alumno']; ?>"
-                class="form-control mb-3">
+                class="form-control mb-3"
+                placeholder="Alumno">
 
             <input type="text"
                 name="curso"
                 value="<?php echo $fila['curso']; ?>"
-                class="form-control mb-3">
+                class="form-control mb-3"
+                placeholder="Curso">
 
             <input type="date"
                 name="fecha"
@@ -78,25 +82,26 @@ if (isset($_POST['actualizar'])) {
             <select name="estado"
                 class="form-control mb-3">
 
-                <option value="Presente">
+                <option value="Presente" <?php echo ($fila['estado'] === 'Presente') ? 'selected' : ''; ?>>
                     Presente
                 </option>
 
-                <option value="Tardanza">
+                <option value="Tardanza" <?php echo ($fila['estado'] === 'Tardanza') ? 'selected' : ''; ?>>
                     Tardanza
                 </option>
 
-                <option value="Falta">
+                <option value="Falta" <?php echo ($fila['estado'] === 'Falta') ? 'selected' : ''; ?>>
                     Falta
                 </option>
 
             </select>
 
             <textarea name="observacion"
-                class="form-control mb-3"><?php echo $fila['observacion']; ?></textarea>
+                class="form-control mb-3"
+                placeholder="Observación"><?php echo $fila['observacion']; ?></textarea>
 
             <button type="submit"
-                name="actualizar"
+                name="editar"
                 class="btn btn-warning">
 
                 Actualizar

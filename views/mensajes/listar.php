@@ -115,6 +115,13 @@ $resultado = mysqli_query($conexion, $sql);
 
                                 </a>
 
+                                <a href="editar.php?id=<?php echo $fila['id_mensaje']; ?>"
+                                    class="btn btn-warning btn-sm">
+
+                                    Editar
+
+                                </a>
+
                                 <a href="eliminar.php?id=<?php echo $fila['id_mensaje']; ?>"
                                     class="btn btn-danger btn-sm">
 

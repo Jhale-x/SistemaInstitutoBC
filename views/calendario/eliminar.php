@@ -1,9 +1,10 @@
-﻿<?php
+<?php
 
 include_once __DIR__ . "/../../config/conexion.php";
 
-$id = intval($_GET['id']);
-$sql = "DELETE FROM usuarios WHERE id_usuario = '$id'";
+$id = $_GET['id'];
+
+$sql = "DELETE FROM calendario WHERE id_evento = '$id'";
 mysqli_query($conexion, $sql);
 
 header('Location: listar.php');

@@ -68,32 +68,38 @@ if (isset($_POST['actualizar'])) {
             Editar Nota
         </h1>
 
-        <form method="POST">
+        <form action="../../controller/NotaController.php" method="POST">
+
+            <input type="hidden" name="id_nota" value="<?php echo $fila['id_nota']; ?>">
 
             <input type="text"
                 name="alumno"
                 value="<?php echo $fila['alumno']; ?>"
-                class="form-control mb-3">
+                class="form-control mb-3"
+                placeholder="Alumno">
 
             <input type="text"
                 name="curso"
                 value="<?php echo $fila['curso']; ?>"
-                class="form-control mb-3">
+                class="form-control mb-3"
+                placeholder="Curso">
 
             <input type="number"
                 step="0.01"
                 name="tarea"
                 value="<?php echo $fila['tarea']; ?>"
-                class="form-control mb-3">
+                class="form-control mb-3"
+                placeholder="Tarea">
 
             <input type="number"
                 step="0.01"
                 name="examen"
                 value="<?php echo $fila['examen']; ?>"
-                class="form-control mb-3">
+                class="form-control mb-3"
+                placeholder="Examen">
 
             <button type="submit"
-                name="actualizar"
+                name="editar"
                 class="btn btn-warning">
 
                 Actualizar
